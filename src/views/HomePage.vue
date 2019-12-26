@@ -1,10 +1,11 @@
 <template>
     <div>
-        <h1>SHOPS</h1>
+        <Shops />
     </div>
 </template>
 
 <script>
+import Shops from '../components/Shops'
 export default {
     
 }
