@@ -14,17 +14,14 @@ export class HttpService {
         this.axios = axios 
     }
 
-    configureAxios(baseUrl, headers = {}) {
+    configureAxios(baseUrl) {
         axios.defaults.baseURL = baseUrl
-        this.setHeaders(headers)
+        // this.setHeaders(headers)
         
     }
 
     setHeaders(headers) {
-        Object.assign(
-            axios.defaults.headers.common,
-            headers
-        )
+        this.axios.defaults.authorization = headers;
     }
 
 }
