@@ -8,7 +8,7 @@
                         <router-link :to='getRoute(shop.id)'>{{  shop.title }} </router-link><img :src="shop.logo" /><p>No manager</p>
                     </div>
                         <div v-else>
-                            <router-link :to='getRoute(shop.id)'>{{  shop.title }} </router-link><img :src="shop.logo" /> <router-link :to='getRouteM(shop.manager)'>{{  shop.manager.first_name }} </router-link>
+                            <router-link :to='getRoute(shop.id)'>{{  shop.title }} </router-link><img :src="shop.logo" /> <router-link :to='getRouteM(shop.manager_id)'>{{  shop.manager.first_name }} </router-link>
                         </div>
                 </li>
             </ol>
@@ -22,7 +22,7 @@ import store from '../store/index.js'
 export default {
     computed:{
         ...mapGetters({
-            shops: 'filteredShops'
+            shops: 'filteredShops',
         })
     },
     methods: {

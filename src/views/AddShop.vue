@@ -25,6 +25,15 @@
           required
           v-model="shop.logo"
         />
+        <select v-model="shop.manager_id" class="form-control">
+                <option></option>
+                <option
+                  v-for="shop in shops"
+                  :key="shop.manager_id"
+                  v-bind:value="manager.id"
+                  v-show="shop.manager_id === null"
+                >{{ manager.first_name+ ' ' +manager.last_name }}</option>
+              </select>
       </div>
     </form>
   </div>
@@ -32,12 +41,18 @@
 
 <script>
 import { shopsService } from "../services/ShopsService";
+import { mapGetters } from 'vuex'
 export default {
   data() {
     return {
       shop: {}
     };
   },
+  computed:{
+        ...mapGetters({
+            shops: 'filteredShops',
+        })
+    },
   methods: {
     handleSubmit() {
       shopsService
