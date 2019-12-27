@@ -17,7 +17,7 @@ export const ShopStore = {
       async fetchShops(context){
         try {
           const response = await shopsService.getAll()
-          context.commit('setShops', response.data)
+          context.commit('setShops', response.data.data)
           return response.data
         } catch (error) { // eslint-disable-line
   
