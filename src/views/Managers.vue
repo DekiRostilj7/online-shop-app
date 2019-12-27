@@ -4,7 +4,7 @@
         <div>
             <ol>
                 <li v-for="(manager, index) in managers" :key="index">
-                    {{  manager.first_name }} {{ manager.last_name}} <img :src="manager.photo" />
+                    <router-link :to='getRoute(manager.id)'>{{  manager.first_name + ' ' + manager.last_name }} </router-link><img :src="manager.photo" />
                 </li>
             </ol>
         </div>

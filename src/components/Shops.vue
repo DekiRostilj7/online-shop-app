@@ -4,7 +4,7 @@
         <div>
             <ol>
                 <li v-for="(shop, index) in shops" :key="index">
-                    {{  shop.title }} <img :src="shop.logo" />
+                    <router-link :to='getRoute(shop.id)'>{{  shop.title }} </router-link><img :src="shop.logo" />
                 </li>
             </ol>
         </div>

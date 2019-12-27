@@ -5,6 +5,8 @@ import Register from '../views/Register'
 import Shops from '../components/Shops'
 import store from './../store'
 import Managers from '../views/Managers'
+import SingleShop from '../views/SingleShop'
+import SingleManager from '../views/SingleManager'
 
 Vue.use(VueRouter)
 
@@ -18,9 +20,25 @@ const routes = [
     }
   },
   {
+    path: '/shops/:id',
+    name: 'SingleShop',
+    component:SingleShop,
+    meta: {
+      guest: false
+    }
+  },
+  {
     path: '/managers',
     name: 'All managers',
     component: Managers,
+    meta: {
+      guest: false
+    }
+  },
+  {
+    path: '/managers/:id',
+    name: 'SingleManager',
+    component: SingleManager,
     meta: {
       guest: false
     }
