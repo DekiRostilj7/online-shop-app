@@ -9,7 +9,7 @@
       <router-link class="nav-link" to="/shop/create" v-if="isUserAuthenticated">Add Shop</router-link>
       <router-link class="nav-link" to="/article/create" v-if="isUserAuthenticated">Add Article</router-link>
       <ShopSearch v-if="isUserAuthenticated"/>
-      <button class="btn btn-primary mt-1" v-if="isUserAuthenticated" @click="onLogout">Logout</button>
+      <button class="btn lout btn-primary mt-1" v-if="isUserAuthenticated" @click="onLogout">Logout</button>
     </nav>
   </header>
 </template>
@@ -38,3 +38,11 @@ export default {
   }
 };
 </script>
+
+<style>
+.lout{
+    margin-right: 10px;
+    position: absolute; 
+    right: 0;
+}
+</style>
