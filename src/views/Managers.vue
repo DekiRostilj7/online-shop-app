@@ -1,10 +1,10 @@
 <template>
     <div class="container">
-        <h1 class="mt-5">Shops</h1>
+        <h1 class="mt-5">Managers</h1>
         <div>
             <ol>
-                <li v-for="(shop, index) in shops" :key="index">
-                    {{  shop.title }} <img :src="shop.logo" />
+                <li v-for="(manager, index) in managers" :key="index">
+                    {{  manager.first_name }} {{ manager.last_name}} <img :src="manager.photo" />
                 </li>
             </ol>
         </div>
@@ -17,16 +17,16 @@ import store from '../store/index.js'
 export default {
     computed:{
         ...mapGetters({
-            shops: 'filteredShops'
+            managers: 'filteredManagers'
         })
     },
     methods: {
         getRoute(id) {
-            return `/shops/${id}`
+            return `/managers/${id}`
         }
     },
     beforeRouteEnter(to, from, next){
-        store.dispatch('fetchShops').then(() => {
+        store.dispatch('fetchManagers').then(() => {
             next()
         })
     }

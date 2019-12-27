@@ -24,5 +24,11 @@ export const ShopStore = {
         }
       }
     },
-    
+    getters: {
+      filteredShops(state){
+        return state.shops.filter((shop) => 
+          shop.title.toLowerCase().includes(state.searchTerm.toLocaleLowerCase()))
+      }
+    }
   }
+

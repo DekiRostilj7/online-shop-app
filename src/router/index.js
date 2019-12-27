@@ -4,6 +4,7 @@ import Login from '../views/Login'
 import Register from '../views/Register'
 import Shops from '../components/Shops'
 import store from './../store'
+import Managers from '../views/Managers'
 
 Vue.use(VueRouter)
 
@@ -19,6 +20,7 @@ const routes = [
   {
     path: '/managers',
     name: 'All managers',
+    component: Managers,
     meta: {
       guest: false
     }
