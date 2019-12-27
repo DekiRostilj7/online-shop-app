@@ -8,13 +8,13 @@
       <router-link class="nav-link" to="/my-shop" v-if="isUserAuthenticated">My Shop</router-link>
       <router-link class="nav-link" to="/shop/create" v-if="isUserAuthenticated">Add Shop</router-link>
       <router-link class="nav-link" to="/article/create" v-if="isUserAuthenticated">Add Article</router-link>
-      <ShopSearch />
-      <!-- <button class="btn btn-primary mt-1" v-if="isUserAuthenticated" @click="onLogout">Logout</button> -->
+      <ShopSearch v-if="isUserAuthenticated"/>
+      <button class="btn btn-primary mt-1" v-if="isUserAuthenticated" @click="onLogout">Logout</button>
     </nav>
   </header>
 </template>
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters, mapActions } from "vuex";
 import ShopSearch from "../ShopSearch";
 export default {
   components: {
@@ -24,6 +24,17 @@ export default {
     ...mapGetters({
       isUserAuthenticated: "isUserAuthenticated"
     })
+  },
+  methods:{
+    ...mapActions({
+      logout: 'logout'
+    }),
+    onLogout(){
+      this.logout()
+      this.$router.push({
+        name: 'Shops'
+      })
+    }
   }
 };
 </script>
