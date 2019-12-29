@@ -2,7 +2,8 @@
     <div class="container">
         <div>
             <h1> {{shop.title}} </h1>
-            <p> Details: {{ shop }} </p>
+            <p> Details: {{ shop.title }} </p>
+            <p> {{ shop.logo }} </p>
         </div>
     </div>
 </template>

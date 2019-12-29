@@ -25,22 +25,15 @@
           required
           v-model="shop.logo"
         />
-        <select v-model="shop.manager_id" class="form-control">
-                <option></option>
-                <option
-                  v-for="shop in shops"
-                  :key="shop.manager_id"
-                  v-bind:value="manager.id"
-                  v-show="shop.manager_id === null"
-                >{{ manager.first_name+ ' ' +manager.last_name }}</option>
-              </select>
+        <button class="btn btn-primary mt-1" type="submit" @click="handleSubmit()">Submit</button>
       </div>
     </form>
   </div>
 </template>
 
 <script>
-import { shopsService } from "../services/ShopsService";
+import { shopsService } from '../services/ShopsService'
+// import { managersService } from '../services/ManagersService'
 import { mapGetters } from 'vuex'
 export default {
   data() {
@@ -51,6 +44,7 @@ export default {
   computed:{
         ...mapGetters({
             shops: 'filteredShops',
+            // managers: fect
         })
     },
   methods: {
@@ -63,3 +57,5 @@ export default {
   }
 };
 </script>
+
+

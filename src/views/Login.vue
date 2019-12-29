@@ -13,7 +13,7 @@
           <b>Password</b>
         </label>
         <input class="form-control" type="password" placeholder="Enter Password" name="psw" required v-model="password"/>
-        <button class="btn btn-primary mt-1" type="submit">Login</button>
+        <button class="btn btn-primary mt-1" type="submit" @click="submit()">Login</button>
       </div>
     </form>
   </div>

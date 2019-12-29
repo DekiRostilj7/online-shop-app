@@ -8,12 +8,13 @@ import Managers from '../views/Managers'
 import SingleShop from '../views/SingleShop'
 import SingleManager from '../views/SingleManager'
 import AddShop from '../views/AddShop'
+import AddManager from '../views/AddManager'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/',
+    path: '/index',
     name: 'Shops',
     component:Shops,
     meta: {
@@ -55,6 +56,14 @@ const routes = [
     path: '/shop/create',
     name: 'Add Shop',
     component: AddShop,
+    meta: {
+      guest: false
+    }
+  },
+  {
+    path: '/manager/create',
+    name: 'Add Manager',
+    component: AddManager,
     meta: {
       guest: false
     }

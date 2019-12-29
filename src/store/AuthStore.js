@@ -36,10 +36,14 @@ export const AuthStore = {
         }
     },
 
-    getters:{
-        isUserAuthenticated(state){
+    getters: {
+        isUserAuthenticated(state) {
             return !!state.token
+        },
+        loginErrors(state) {
+            return state.errors
         }
+        
     }
     
 }

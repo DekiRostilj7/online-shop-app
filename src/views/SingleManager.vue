@@ -2,7 +2,8 @@
     <div class="container">
         <div>
             <h1> {{  manager.first_name + ' ' + manager.last_name }} </h1>
-            <p> Details: {{ manager }} </p>
+            <p> Details: {{ manager.email }} </p> 
+            <p> {{ manager.email }} </p> 
         </div>
     </div>
 </template>
@@ -19,11 +20,11 @@ export default {
     created(){
         managersService.getId(this.$route.params.id)
             .then(response => {
-                console.log(response);
                 this.manager = response.data;
             } )
     }
 }
+
 </script>
 
 <style>
@@ -31,3 +32,4 @@ export default {
     margin-top: 60px;
 }
 </style>
+

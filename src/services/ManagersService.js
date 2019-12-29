@@ -9,6 +9,9 @@ class ManagersService extends HttpService{
     getId(id){
         return this.axios.get(`/managers/${id}`);
     }
+    addManager(manager){
+        return this.axios.post('managers', manager);
+    }
 }
 
 export const managersService = new ManagersService()
